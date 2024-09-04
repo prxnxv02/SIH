@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="travel_styles.css">
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get the username from the input field
+            const username = document.getElementById('username').value;
+
+            // Save the username in sessionStorage
+            sessionStorage.setItem('username', username);
+
+            // Redirect to index2.html
+            window.location.href = 'index2.html';
+        }
+    </script>
+</head>
+
+<body class="login-page">
+    <div class="form-container">
+        <h1>Login</h1>
+        <form onsubmit="handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p><a href="register.html">Don't have an account? Register here.</a></p>
+    </div>
+</body>
+
+</html>

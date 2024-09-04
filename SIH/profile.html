@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Link to your CSS file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the username from session storage
+            const username = sessionStorage.getItem('username');
+
+            // Display the username if available
+            if (username) {
+                document.getElementById('user-name').textContent = username;
+            } else {
+                document.getElementById('user-name').textContent = 'Guest';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav__logo">Travel</a>
+            <a href="index2.html" class="nav__link">Home</a>
+            <a href="index.html" class="nav__link">Logout</a>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/150" alt="User Profile Picture" class="profile-picture">
+                <h2 id="user-name" class="user-name">Loading...</h2>
+                <p class="user-email">Loading...</p>
+            </div>
+            <div class="profile-body">
+                <h3>About Me</h3>
+                <p>Let him Cook</p>
+
+                <h3>Contact Information</h3>
+                <p>Phone: (91) 9360209188</p>
+                <p>Address:<h5>Peelamedu, Coimbatore, INDIA</h5></p>
+
+                <div class="profile-actions">
+                    <a href="edit-profile.html" class="btn">Edit Profile</a>
+                    <a href="index.html" class="btn btn-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
